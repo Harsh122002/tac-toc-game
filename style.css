@@ -1,0 +1,141 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+   
+   body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     gap: 10px;
+     background-color: lightblue;
+     font-family: Arial, sans-serif;
+   }
+   body h1 {
+     color: #787171;
+   }
+   
+   .container {
+     width: 100%;
+     max-width: 500px; /* Limit the width for better responsiveness */
+     height: auto;
+     background-color: white;
+     border-radius: 10px;
+     overflow: hidden;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 1rem;
+   }
+   
+   .game {
+     display: grid;
+     grid-template-rows: auto auto 1fr;
+     justify-items: center;
+     gap: 1rem;
+     width: 100%;
+     margin: 0 0 20px 0;
+   }
+   
+   .winner {
+     grid-row: 1;
+     text-align: center;
+     font-size: 1.5rem;
+     color: darkgreen;
+     font-weight: bold;
+   }
+   
+   .game-board {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 5px;
+     justify-items: center;
+     align-content: center;
+     width: 100%;
+     max-width: 300px; /* Ensure grid scales properly */
+     margin: auto;
+   }
+   
+   button {
+     width: 100%; /* Allow buttons to scale automatically */
+     aspect-ratio: 1; /* Ensure square buttons */
+     background-color: lightcoral;
+     border: none;
+     border-radius: 5px;
+     font-size: 1.5rem;
+     color: white;
+     cursor: pointer;
+     transition: transform 0.2s ease, background-color 0.2s ease;
+   }
+   
+   button:hover {
+     background-color: coral;
+     transform: scale(1.05);
+   }
+   
+   button:disabled {
+     background-color: lightgray;
+     cursor: not-allowed;
+   }
+   
+   .play-again {
+     display: none;
+     width: auto;
+     margin: 20px auto;
+     width: 6rem;
+     height: 2rem;
+     font-size: 1rem;
+     background-color: lightgreen;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .play-again:hover {
+     background-color: green;
+     color: white;
+   }
+   
+   .reset {
+     grid-row: 2;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+   }
+   
+   .reset-btn {
+     padding: 1px 8px;
+     width: auto;
+     height: 2rem;
+     font-size: 1rem;
+     background-color: gray;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.2s ease;
+   }
+   
+   .reset-btn:hover {
+     background-color: darkgray;
+   }
+   
+   /* Responsive adjustments */
+   @media screen and (max-width: 780px) {
+     .game-board {
+       max-width: 250px;
+       gap: 4px;
+     }
+   }
+   
+   @media screen and (max-width: 670px) {
+     .game-board {
+       max-width: 200px;
+       gap: 3px;
+     }
+   }
+   
